@@ -15,6 +15,15 @@ go to your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account and start a bash shell.
 
+First, lets build the models for the the dj4e-samples if you have not already done so:
+
+    workon django2    # If needed
+    cd ~/dj4e-samples
+    python3 manage.py makemigrations
+    python3 manage.py migrate
+
+Then continue working on the `locallibrary` project:
+
     workon django2
     cd ~/django_projects/locallibrary
 
@@ -78,7 +87,7 @@ You can learn more about the command line mode of `sqlite3` at their web site:
 https://www.sqlite.org/cli.html
 
 Continue editing the `catalog/models.py` file and add the Book, BookInstance, and Author models
-according to the 
+according to the tutorial.
 
 Also add the `language` field to the correct table as discussed in the "Challenge" section 
 at the end of the tutorial.
@@ -91,6 +100,10 @@ Once your models.py file is complete, run the migrations again:
 
 You can repeat the process of editing the `models.py` file and re-running the migrations until you get them
 right.
+
+If you are using the autograder for this assignment, you will need to upload the
+`db.sqlite3` file.  If you are using PythonAnywhere you can use the Files tab
+to download the file to your computer and then upload it to the autograder.
 
 If You Are Keeping Your Projects GitHub
 ---------------------------------------

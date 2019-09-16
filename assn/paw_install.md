@@ -38,7 +38,7 @@ Once you have created your PYAW account, start a `bash` shell
 and set up a virtual environment with Python 3.x and Django 2.
 
     mkvirtualenv django2 --python=/usr/bin/python3.6
-    pip install django ## this may take a couple of minutes
+    pip3 install django ## this may take a couple of minutes
 
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
 to get back into your virtual environment in the new bash shell.
@@ -58,6 +58,8 @@ as the course progresses and install some important additional Django software l
     git clone https://github.com/csev/dj4e-samples
     cd dj4e-samples
     pip3 install -r requirements.txt
+    python3 manage.py makemigrations
+    python3 manage.py migrate
 
 In the PYAW shell, continue the steps from the MDN:
 
@@ -76,6 +78,7 @@ app and your application.
     virtualenv: /home/--your-account---/.virtualenvs/django2
 
 Then edit the *WGSI Configuration File* and put the following code into it.
+Make sure to delete the existing contenxt of the file and replace it with the text below.
 This is slightly different from the sample in the PythonAnywhere tutorial.
 
     import os
@@ -95,7 +98,7 @@ the allowed hosts line (around line 28) to be:
      ALLOWED_HOSTS = [ '*' ]                                                                                                        
 
 There are three ways to edit files in your PythonAnywhere environment, ranging from the easiest
-to the coolest.
+to the coolest.  You only have to edit the file one of these ways.
 
 (1) Go to the main PythonAnywhere dashboard, browse files, navigate to the correct folder and edit the file
 
@@ -106,7 +109,7 @@ to the coolest.
     cd ~/django_projects/mytestsite/mytestsite/
     nano settings.py
 
-    Save the File by pressing 'CTRL-C', 'Y', and Enter
+    Save the File by pressing 'CTRL-X', 'Y', and Enter
 
 (3) Don't try this most difficult and most cool way to edit files on Linux without a helper
 if it is your first time with the `vi` text editor.

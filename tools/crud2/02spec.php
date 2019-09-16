@@ -29,9 +29,14 @@ pre {padding-left: 2em;}
 In this <?= $assignment_type_lower ?> you will build a web based application to
 track data about <?= strtolower($title_plural) ?> <?= $assignment_examples ?>.
 Only logged in users will be able to add a <?= strtolower($title_singular) ?> record.
-Each of the <?= strtolower($title_singular) ?> will be owned by the logged-in
+Each of the <?= strtolower($title_singular) ?> entries will be owned by the logged-in
 user that created the item.  Only the owning user will be able to edit or
 deletes <?= strtolower($title_singular) ?> entries that belong to them.
+</p>
+<p>
+Your application must also allow logged-in users to create a comment for 
+any <?= strtolower($title_singular) ?> record.  Comments should be visible to all users; 
+however, only the comment owning user will be able to delete their comments.
 </p>
 <?php if ( $assignment_type == 'Exam' || $assignment_type == "Sample Exam" ) { ?>
 <h1><?= $assignment_type ?> Rules
@@ -237,7 +242,7 @@ You can also copy and adapt your templates from a previous assignment to produce
 <b><?= $main_lower_plural ?>/templates</b>.
 </li>
 <li>
-Edit <b>base_menu.html.py</b> template so you have a <b>Create <?= $main_title ?></b> link
+Edit <b>base_menu.html</b> template so you have a <b>Create <?= $main_title ?></b> link
 that appears only when the user is logged in.  Also make sure that the "next=" on your Login
 and Logout buttons routes the user back to the <b>/<?= $main_lower_plural ?></b> URL
 after you login.
